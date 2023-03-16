@@ -54,7 +54,7 @@ jobs:
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1  
     displayName: 'ESRP sign Microsoft.PowerPlatform.Formulas.Tools.dll'
     inputs:
-      ConnectedServiceName: 'ESRPCodeSigningConnection-OneCRM'
+      ConnectedServiceName: 'ESRPCodeSignConnection-OneCRM'
       FolderPath: '$(Build.SourcesDirectory)/bin/$(BuildConfiguration)/PAModel/'
       Pattern: '*.dll'
       signConfigType: inlineSignParams
@@ -112,7 +112,7 @@ jobs:
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP sign nuget packages'
     inputs:
-      ConnectedServiceName: ESRPCodeSigningConnection-OneCRM
+      ConnectedServiceName: ESRPCodeSignConnection-OneCRM
       FolderPath: '$(Build.SourcesDirectory)/pkg/PackResult'
       Pattern: '*.nupkg'
       signConfigType: inlineSignParams
